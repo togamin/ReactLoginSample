@@ -20,6 +20,8 @@ const styles = StyleSheet.create({
   container:{
     flex:1,
     padding:9,
+    alignItems:'center',
+    justifyContent:'center',
   },
   loginBtn:{
     width:'100%',
