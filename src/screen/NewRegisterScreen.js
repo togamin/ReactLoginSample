@@ -1,5 +1,6 @@
 import React from 'react';
-import { StyleSheet, Text, View, TextInput } from 'react-native';
+import { StyleSheet, Text, View, TouchableHighlight } from 'react-native';
+import TextInputView from '../components/TextInputView';
 
 class LoginScreen extends React.Component{
   render(){
@@ -7,9 +8,15 @@ class LoginScreen extends React.Component{
       <View style = {styles.container}>
         <Text style = {styles.newRegisterText}>新規登録</Text>
         <Text style = {styles.textInputTitle}>Email Address</Text>
-        <TextInput style = {styles.textInputField}/>
+        <TextInputView placeholder = "Email Address"/>
         <Text style = {styles.textInputTitle}>Password</Text>
-        <TextInput style = {styles.textInputField}/>
+        <TextInputView placeholder = "Password" pass='true'/>
+
+        <View style = {styles.btnContainer}>
+          <TouchableHighlight style = {styles.btn}>
+            <Text style = {styles.btnText}>新規登録</Text>
+          </TouchableHighlight>
+        </View>
       </View>
     );
   }
@@ -31,14 +38,30 @@ const styles = StyleSheet.create({
   textInputTitle:{
     fontSize:18,
   },
-  textInputField:{
+  btnContainer:{
+    width:'100%',
+    alignItems:'center',
+  },
+  btn:{
+    width:'60%',
     height:48,
-    marginTop:9,
+    marginTop:18,
     marginBottom:18,
-    paddingLeft:9,
-    backgroundColor:'#eee',
-    borderWidth:1,
-    borderColor:'#ddd',
+    borderRadius:9,
+    backgroundColor:'#c71585',
+    alignItems:'center',
+    justifyContent:'center',
+    //影
+    shadowColor:'#000',
+    shadowOffset:{width:0,height:2},
+    shadowOpacity:0.5,
+    shadowRadius:3,
+    zIndex:10,
+  },
+  btnText:{
+    fontSize:18,
+    fontWeight:'bold',
+    color:'#fff',
   }
 });
 
